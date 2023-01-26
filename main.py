@@ -4,7 +4,7 @@ def main():
     dpg.create_context()
     dpg.create_viewport(title='Custom Title', width=600, height=300)
 
-    with dpg.window(label="Example Window"):
+    with dpg.window(tag="Primary Window", label="Example Window"):
         dpg.add_text("Hello, world")
         dpg.add_button(label="Save")
         dpg.add_input_text(label="string", default_value="Quick brown fox")
@@ -12,9 +12,12 @@ def main():
 
     dpg.setup_dearpygui()
     dpg.show_viewport()
+    dpg.set_primary_window("Primary Window", True)
     dpg.start_dearpygui()
     dpg.destroy_context()
 
 
 if __name__ == "__main__":
     main()
+
+
